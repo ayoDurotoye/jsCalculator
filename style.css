@@ -1,0 +1,143 @@
+body{
+    padding: 0;
+    margin: 0;
+    
+}
+
+main{
+    /* width: 50%; */
+    height: fit-content;
+    border: 1px solid black;
+    justify-content: center;
+    margin-left: 30%;
+    margin-top: 5%;
+    width: fit-content;
+    padding: 20px;
+    box-shadow: 1px 0.5px -1px;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+.calculator-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+    margin-bottom: 20px;
+}
+
+.calculator-nav .left-nav{
+    display: flex;
+    flex: 1;
+    gap: 10px;
+}
+
+.calculator-nav .right-nav {
+    display: flex;
+    gap: 20px;
+    
+    
+}
+
+.calculator-nav .right-nav i{
+    background-color: transparent;
+    border: 50%;
+    padding: 5px;
+}
+
+.calculator-nav .right-nav .close:hover{
+    background-color: rgba(194, 196, 196, 0.457);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.calculator-nav .right-nav .expand:hover{
+    background-color: rgba(194, 196, 196, 0.457);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.calculator-nav .right-nav .cancle:hover{
+    background-color: rgb(231, 50, 50);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.menu-wrapper{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.left-menu span{
+    font-size: 24px;
+
+}
+
+.left-menu{
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    align-items: center;
+}
+
+.input-wrapper {
+    width: 95%;
+    /* padding: 10px; */
+    margin-bottom: 20px;
+}
+
+ #bigScreen{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 12px;
+    border: 1px dotted black;
+    height: 50px;
+    text-align: right;
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+#smallScreen{
+    font-size: 18px;
+    font-weight: lighter;
+    color: rgb(126, 126, 124);
+    height: 30px;
+    /* border: 1px solid red; */
+    width: 100%;
+    text-align: end;
+}
+
+.memory-function{
+    display: flex;
+    flex-direction: row;
+    gap: 21px;
+}
+
+.memory-function button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+table button{
+    width: 105px;
+    height: 50px;
+    font-size: 22px;
+    background-color: rgb(246, 245, 243);
+    border: none;
+    box-shadow: 1px 1px 4px;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+table button:hover{
+    background-color: rgb(243, 251, 255);
+}
+
+
