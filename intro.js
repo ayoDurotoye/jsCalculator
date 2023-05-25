@@ -248,15 +248,15 @@ let artist = [""];
         let number = artist[i].split(" ")[1];
 
         showArea.innerHTML += `
-          <table border="1" width="80%">
-          <tbody>
-            <td>${i}</td>
+          
+          <tbody border="1" width="80%" text-align="center">
+            <td>${i + 1}</td>
             <td>${name}</td>
             <td>${number}</td>
             <td><button onclick="deleteArtist(${i})">Delete</button></td>
           </tbody>
           
-          </table>
+         
         `;
       }
 
