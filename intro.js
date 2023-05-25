@@ -230,12 +230,25 @@ function onclick() {
        
 // }
 
-let artist = [""];
+
+
+
+
+// push array into table
+
+let artist = [];
 
     function add() {
       let input = document.getElementById('blackwood').value;
-      let inputphone = document.getElementById('phoneNumber').value;
-      artist.push(input + " " + inputphone);
+      let inputphone = document.getElementById('artistNumber').value;
+     
+      let newArtist = {
+        name: input,
+        number: inputphone
+      };
+      
+      artist.push(newArtist);
+      
       show();
     }
 
@@ -244,8 +257,11 @@ let artist = [""];
       showArea.innerHTML = "";
 
       for (let i = 0; i < artist.length; i++) {
-        let name = artist[i].split(" ")[0];
-        let number = artist[i].split(" ")[1];
+        // let name = artist[i].split(" ")[0];
+        // let number = artist[i].split(" ")[1];
+        let name = artist[i].name;
+       let number = artist[i].number;
+
 
         showArea.innerHTML += `
           
