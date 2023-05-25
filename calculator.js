@@ -15,7 +15,10 @@ function toggle(message){
     
 }
 
+function deletebtn(message){
+    inputs.innerHTML = inputs.innerHTML.slice(0 , -1)
 
+}
 
 function reset(message){
     inputs.innerHTML =null
@@ -90,6 +93,25 @@ function equal(message){
 //     inputs.innerHTML = 
 // }
 
+// let textBox = document.getElementById('textInput');
 
+// textBox ('input', function() {
+//     let inputText = textBox.value .toLowercase();
+    
+//     if(inputText.includes('sex')){
+//         inputText = inputText.replace('sex','Gender');
+//         textBox.value = inputText;
+//     }
+// });
+
+function change() {
+    textInput.value = textInput.value.replace(/sex/i,'Gender');
+    textInput.value = textInput.value.replace(/death/i,'');
+    textInput.value = textInput.value.replace(/kill/i,'');
+    textInput.value = textInput.value.replace(/die/i,'');
+    
+
+    
+}
 
 

@@ -103,4 +103,167 @@ function toggle(message){
 // }
 
 
+function popUp() {
+    let input1 = document.getElementById("firstInput").value;
+    let input2 = document.getElementById("secondInput").value;
 
+
+    text=input1.split("")
+
+    if (text. includes(input2)) {
+        alert("word found");
+        return;
+    }   else {
+        alert("word not found");
+    }
+
+}
+
+
+
+let ar=['tessy','titi','ay', 'bolu']
+
+// change an element
+ar[1]='titlayo'
+
+
+
+
+function onclick() {
+    let inputField = document.getElementById('inputDisplay').value;
+    let outputElement = document.getElementById('outDisplay').value;
+    let addButton = document.getElementById('addButton');
+    let valuesArray = [];
+    
+    function addToArray() {
+      let inputValue = inputField.value;
+      valuesArray.push(inputValue);
+      outputElement.value = outputElement.value + inputField;
+    }
+
+    
+}
+
+
+
+
+// ar.push add element to the pack from the right
+// unshift() add element to the left
+// shift() remove element from the left
+// pop() remove element from the right
+// join() convert array to string
+// split() convert strings to array
+// splice () to cut some part of an array 
+
+
+// function popUp() {
+//     let input1 = document.getElementById("firstInput").value;
+//     let input2 = document.getElementById("secondInput").value;
+
+//     let words1 = input1.split(" ");
+//     let words2 = input2.split(" ");
+
+//     let found = false;
+//     for (let i = 0; i < words1.length; i++) {
+//         if (words2.includes(words1[i])) {
+//             found = true;
+//             break;
+//         }
+//     }
+
+//     if (found) {
+//         alert("Word found");
+//     } else {
+//         alert("Word not found");
+//     }
+// }
+
+// for (let index = 20; index > 0; index--) {
+//     console.log(index);
+// }
+
+
+
+
+
+// function multiplicationTable() {
+//     let table;
+//     table='<table id="mtable">';
+//     let num=document.getElementById("number").value;
+//     if(num==null || num=="")
+//     num=5;
+//        for(i=1;i<=12;i++){
+//           table+='<tr><td>'+num+'*'+i+'='+num*i+'</td></tr>';
+//        }
+//     table+='</table>';
+//     document.getElementById("result").innerHTML = table;
+// }
+
+// function mutiplicationTables(){
+
+//     if (isNaN(input001.value) || isNaN(input002.value)) {
+//         showTabless.innerHTML = 'Invalid';
+//         return;
+//       }
+
+//     if (input001.value > input002.value) {
+//         showTabless.innerHTML = `Invalid`
+//       }
+   
+//     let start= input001;
+//     let end= input002;
+//     // showTabless.innerHTML="";
+
+   
+    
+    
+
+//         for (let index = Number(start.value) ; index <= Number(end.value); index++) {
+//             for(let i= 1; i < 13; i++) {
+                
+//              showTabless.innerHTML += `${index} * ${i} = ${index*i} <br>`;
+            
+//             }
+//             showTabless.innerHTML +=`<p><p>` ;
+//         }
+
+       
+// }
+
+let artist = [""];
+
+    function add() {
+      let input = document.getElementById('blackwood').value;
+      let inputphone = document.getElementById('phoneNumber').value;
+      artist.push(input + " " + inputphone);
+      show();
+    }
+
+    function show() {
+      let showArea = document.getElementById("showArea");
+      showArea.innerHTML = "";
+
+      for (let i = 0; i < artist.length; i++) {
+        let name = artist[i].split(" ")[0];
+        let number = artist[i].split(" ")[1];
+
+        showArea.innerHTML += `
+          <table border="1" width="80%">
+          <tbody>
+            <td>${i}</td>
+            <td>${name}</td>
+            <td>${number}</td>
+            <td><button onclick="deleteArtist(${i})">Delete</button></td>
+          </tbody>
+          
+          </table>
+        `;
+      }
+
+      // showArea.innerHTML += `</table>`;
+    }
+
+    function deleteArtist(index) {
+      artist.splice(index, 1);
+      show();
+    }

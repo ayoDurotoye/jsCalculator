@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Add your CSS styles here */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="blackwood" placeholder="Enter artist name">
+  <input type="text" id="phoneNumber" placeholder="Enter phone number">
+  <button onclick="add()">Add Artist</button>
+
+  <div id="showArea"></div>
+
+  <table id="artistTable">
+    <thead>
+      <tr>
+        <th>Serial Number</th>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script>
+    let artist = [""];
+    let serialNumber = 1;
+
+    function add() {
+      let input = document.getElementById('blackwood').value;
+      let inputphone = document.getElementById('phoneNumber').value;
+      artist.push(input + inputphone);
+      show();
+    }
+
+    function show() {
+      let tableBody = document.getElementById("tableBody");
+      tableBody.innerHTML = "";
+      for (let i = 0; i < artist.length; i++) {
+        let row = document.createElement("tr");
+        let serialNumCell = document.createElement("td");
+        serialNumCell.textContent = serialNumber++;
+        let nameCell = document.createElement("td");
+        nameCell.textContent = artist[i];
+        let phoneCell = document.createElement("td");
+        phoneCell.textContent = artist[i].slice(input.length);
+        let actionCell = document.createElement("td");
+        let deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.onclick = function() {
+          deleteArtist(i);
+        };
+        actionCell.appendChild(deleteBtn);
+
+        row.appendChild(serialNumCell);
+        row.appendChild(nameCell);
+        row.appendChild(phoneCell);
+        row.appendChild(actionCell);
+
+        tableBody.appendChild(row);
+      }
+    }
+
+    function deleteArtist(index) {
+      artist.splice(index, 1);
+      show();
+    }
+  </script>
+</body>
+</html>
