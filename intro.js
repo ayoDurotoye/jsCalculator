@@ -248,36 +248,60 @@ let artist = [];
       };
       
       artist.push(newArtist);
-      
       show();
     }
+
+    // function show() {
+    //   let showArea = document.getElementById("showArea");
+    //   showArea.innerHTML = "";
+
+    //   for (let i = 0; i < artist.length; i++) {
+    //    let name = artist[i].name;
+    //    let number = artist[i].number;
+
+       
+
+
+    //     showArea.innerHTML += `
+          
+    //       <tbody border="1" width="80%" text-align="center">
+    //         <td>${i + 1}</td>
+    //         <td>${name}</td>
+    //         <td>${number}</td>
+    //         <td><button onclick="deleteArtist(${i})">Delete</button></td>
+    //       </tbody>
+    //     `;
+    //   }
+
+    
+    // }
+
 
     function show() {
       let showArea = document.getElementById("showArea");
       showArea.innerHTML = "";
-
-      for (let i = 0; i < artist.length; i++) {
-        // let name = artist[i].split(" ")[0];
-        // let number = artist[i].split(" ")[1];
-        let name = artist[i].name;
-       let number = artist[i].number;
-
-
+    
+      artist.forEach((artistObj, index) => {
+        let name = artistObj.name;
+        let number = artistObj.number;
+    
         showArea.innerHTML += `
-          
           <tbody border="1" width="80%" text-align="center">
-            <td>${i + 1}</td>
+            <td>${index + 1}</td>
             <td>${name}</td>
             <td>${number}</td>
-            <td><button onclick="deleteArtist(${i})">Delete</button></td>
+            <td><button onclick="deleteArtist(${index})">Delete</button></td>
           </tbody>
-          
-         
         `;
-      }
-
-      // showArea.innerHTML += `</table>`;
+      });
     }
+    
+    
+    
+    
+    
+    
+    
 
     function deleteArtist(index) {
       artist.splice(index, 1);
