@@ -295,15 +295,66 @@ let artist = [];
         `;
       });
     }
-    
-    
-    
-    
-    
-    
-    
 
-    function deleteArtist(index) {
+       function deleteArtist(index) {
       artist.splice(index, 1);
       show();
     }
+
+    // let n;
+    //  function  Multiply(){
+    //   if (isNaN(input1.value) ||  isNaN(input2.value)){
+    //   result.innerHTML='invalid'
+    //   return;
+      
+    // }
+    // if (input1.value > input2.value){
+    //   result.innerHTML='invalid'
+      
+    // }
+    //     for (let j = Number(input1.value) ; j <= Number(input2.value); j++) {
+    //      for ( let i= 1; i <= 12; i++) {
+    //         result.innerHTML += ` ${j} * ${i} =${j*i}<br>`
+    //      } 
+    //      result.innerHTML +=`<p></p>` ;
+    //     }
+    // }
+
+
+    function Multiply() {
+      if (isNaN(input1.value) || isNaN(input2.value)) {
+        result.innerHTML = 'invalid';
+        return;
+      }
+    
+      if (input1.value > input2.value) {
+        result.innerHTML = 'invalid';
+        return;
+      }
+    
+      let numbers = [];
+      let start =(input1.value);
+      let end = (input2.value);
+      let resultString = '';
+    
+      for (let j = start; j <= end; j++) {
+        numbers.push(j);
+      }
+      result.innerHTML = ""
+    
+      numbers.forEach((j) => {
+        for (let i = 1; i <= 12; i++) {
+          result.innerHTML += `${j} * ${i} = ${j * i}<br>`;
+        }
+
+        result.innerHTML += `<p></p>`;
+      });
+    
+      
+    }
+
+    // filter 
+    // sum 
+    // every 
+    // induceded 
+    // map
