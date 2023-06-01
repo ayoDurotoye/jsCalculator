@@ -8,7 +8,12 @@
 
     <title>Document</title>
 </head>
-
+<style>
+  .correct {
+  background-color: green;
+  width: 20%;
+}
+</style>
 
 <body>
     
@@ -78,7 +83,7 @@ click to start</button>
 
 
 
-<div>
+<!-- <div>
     <input type="text" placeholder="name of artist" id="blackwood" style="height: 40px;width: 20%; background-color: rgb(229, 223, 235); color: rgb(0, 0, 0); margin-top: 50px;">
     <input type="text" placeholder="artist unique number" id="artistNumber" style="height: 40px;width: 20%; background-color: rgb(229, 223, 235); color: rgb(0, 0, 0); margin-top: 50px;">
    
@@ -102,8 +107,16 @@ click to start</button>
    <button class="button1" onclick="Multiply()" style="background-color: red;color: white; width: 100px; border-radius: 20px; height: 30px;">Generate </button>
   </div> 
     <div  id="result" style="display: flex; gap: 12px; flex-wrap: wrap;"></div><br><br>
-  
+ -->
 
+
+
+    <div>
+      <input type="text" id="inp1" oninput="sach()" style="width: 20%; background-color: bisque; height: 20px;">
+
+      <div id="errorr"></div>
+     
+   </div>
 
 
 <script src="./intro.js"></script>

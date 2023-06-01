@@ -321,38 +321,106 @@ let artist = [];
     // }
 
 
-    function Multiply() {
-      if (isNaN(input1.value) || isNaN(input2.value)) {
-        result.innerHTML = 'invalid';
-        return;
-      }
+    // function Multiply() {
+    //   if (isNaN(input1.value) || isNaN(input2.value)) {
+    //     result.innerHTML = 'invalid';
+    //     return;
+    //   }
     
-      if (input1.value > input2.value) {
-        result.innerHTML = 'invalid';
-        return;
-      }
+    //   if (input1.value > input2.value) {
+    //     result.innerHTML = 'invalid';
+    //     return;
+    //   }
     
-      let numbers = [];
-      let start =(input1.value);
-      let end = (input2.value);
-      let resultString = '';
+    //   let numbers = [];
+    //   let start =(input1.value);
+    //   let end = (input2.value);
+    //   let resultString = '';
     
-      for (let j = start; j <= end; j++) {
-        numbers.push(j);
-      }
-      result.innerHTML = ""
+    //   for (let j = start; j <= end; j++) {
+    //     numbers.push(j);
+    //   }
+    //   result.innerHTML = ""
     
-      numbers.forEach((j) => {
-        for (let i = 1; i <= 12; i++) {
-          result.innerHTML += `${j} * ${i} = ${j * i}<br>`;
-        }
+    //   numbers.forEach((j) => {
+    //     for (let i = 1; i <= 12; i++) {
+    //       result.innerHTML += `${j} * ${i} = ${j * i}<br>`;
+    //     }
 
-        result.innerHTML += `<p></p>`;
-      });
+    //     result.innerHTML += `<p></p>`;
+    //   });
     
       
-    }
+    // }
 
+
+    //  case study of Array.filter
+
+//     let names = ['teslim', 'titi', 'bolu', 'ayo', 'teslim', 'titi', 'bolu', 'ayom','come','photoshop', 'teslim', 'titi', 'bolu', 'ayomide'];
+// let searchInput = document.querySelector('#inpme');
+// let resultsDiv = document.querySelector('#hh3');
+
+// searchInput.addEventListener('input', () => {
+//   let searchTerm = searchInput.value.toLowerCase();
+//   let filteredNames = names.filter(name => name.toLowerCase().startsWith(searchTerm));
+//   displayResults(filteredNames);
+// });
+
+// function displayResults(filteredNames) {
+//   resultsDiv.innerHTML = '';
+
+//   if (filteredNames.length === 0) {
+//     resultsDiv.innerHTML = 'No results found.';
+//   } else {
+//     filteredNames.forEach(name => {
+//       const nameDiv = document.createElement('div');
+//       nameDiv.innerText = name;
+//       resultsDiv.appendChild(nameDiv);
+//     });
+//   }
+
+//   // Clear the screen if the search input is empty
+//   if (searchInput.value === '') {
+//     resultsDiv.innerHTML = '';
+//   }
+// }
+
+
+// displayResults([]);
+  
+
+
+
+let names = ['teslim', 'titi', 'bolu', 'ayo', 'ibro', 'ibro', 'teslim', 'titi', 'bolu', 'ayom','come','photoshop', 'teslim', 'titi', 'bolu', 'ayomide'];
+
+
+function sach(){
+  let input1=document.getElementById('inp1').value;
+
+
+  
+  let finds= names.filter(function(p){
+    return p.toUpperCase() .includes(input1.toUpperCase())
+  })
+
+  errorr.innerHTML = "";
+  finds.forEach(function(el){
+ 
+    
+    let p = document.createElement('p');
+    p.innerText = el;
+    
+   
+    // if (el.toUpperCase() === input1.toUpperCase()) {
+    //   p.classList.add('correct');
+    // }
+
+    errorr.innerHTML = finds.map(el => `<p${el.toUpperCase() === input1.toUpperCase() ? ' class="correct"' : ''}>${el}</p>`).join(' ');
+
+  })
+}
+
+    
     // filter 
     // sum 
     // every 
