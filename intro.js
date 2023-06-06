@@ -391,34 +391,34 @@ let artist = [];
 
 
 
-let names = ['teslim', 'titi', 'bolu', 'ayo', 'ibro', 'ibro', 'teslim', 'titi', 'bolu', 'ayom','come','photoshop', 'teslim', 'titi', 'bolu', 'ayomide'];
+// let names = ['teslim', 'titi', 'bolu', 'ayo', 'ibro', 'ibro', 'teslim', 'titi', 'bolu', 'ayom','come','photoshop', 'teslim', 'titi', 'bolu', 'ayomide'];
 
 
-function sach(){
-  let input1=document.getElementById('inp1').value;
+// function sach(){
+//   let input1=document.getElementById('inp1').value;
 
 
   
-  let finds= names.filter(function(p){
-    return p.toUpperCase() .includes(input1.toUpperCase())
-  })
+//   let finds= names.filter(function(p){
+//     return p.toUpperCase() .includes(input1.toUpperCase())
+//   })
 
-  errorr.innerHTML = "";
-  finds.forEach(function(el){
+//   errorr.innerHTML = "";
+//   finds.forEach(function(el){
  
     
-    let p = document.createElement('p');
-    p.innerText = el;
+//     let p = document.createElement('p');
+//     p.innerText = el;
     
    
-    // if (el.toUpperCase() === input1.toUpperCase()) {
-    //   p.classList.add('correct');
-    // }
+//     // if (el.toUpperCase() === input1.toUpperCase()) {
+//     //   p.classList.add('correct');
+//     // }
 
-    errorr.innerHTML = finds.map(el => `<p${el.toUpperCase() === input1.toUpperCase() ? ' class="correct"' : ''}>${el}</p>`).join(' ');
+//     errorr.innerHTML += finds.map(el => `<p${el.toUpperCase() === input1.toUpperCase() ? ' class="correct"' : ''}>${el}</p>`).join(' ');
 
-  })
-}
+//   })
+// }
 
     
     // filter 
@@ -426,3 +426,45 @@ function sach(){
     // every 
     // induceded 
     // map
+
+
+    // function doAction() {
+    //   let height = document.querySelector('input[placeholder="height"]').value;
+    //   let width = document.querySelector('input[placeholder="width"]').value;
+    //   let margin = document.querySelector('input[placeholder="margin"]').value;
+    //   let color = document.querySelector('input[placeholder="color"]').value;
+    //   let div = document.querySelector('div');
+      
+    //   div.style.height = height;
+    //   div.style.width = width;
+    //   div.style.margin = margin;
+    //   div.style.backgroundColor = color;
+    // }
+    // function doAction() {
+    //   let inputs = document.querySelectorAll('input');
+    //   let div = document.getElementById('showMe');
+    
+    //   inputs.forEach(function(input) {
+    //     let attribute = input.getAttribute('placeholder');
+    //     let value = input.value;
+    //     div.style[attribute] = value;
+    //   });
+    // }
+    
+    // var button = document.getElementById('clickTochange');
+    // button.addEventListener('click', doAction);
+
+
+    function displaybox() {
+      let width = document.getElementById("width").value;
+      let height = document.getElementById("height").value;
+      let colorValue = document.getElementById("colorValue").value;
+      let margin = document.getElementById("margin").value;
+      let div = document.getElementById("box");
+      div.style.display = "block";
+      div.style.width = width + "px";
+      div.style.height = height + "px";
+      div.style.backgroundColor = colorValue;  
+      div.style.margin = margin + "px";
+
+    }

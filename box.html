@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="width" placeholder="width">
+    <input type="text" id="height" placeholder="height">
+    <input type="text" id="margin" placeholder="margin">
+    <input type="text" id="colorValue" placeholder="color">
+    <button id="change" onclick="displayBox()" style="padding: px;">Click</button>
+    <br>
+    <div id="box"></div>
+    <br>
+    <button onclick="move('left')" 
+    onmousedown="startMove('left')" onmouseup="stopMove()" onmouseout="stopMove()"
+    style="margin-right: 10px;">Click Left</button>
+    
+    <button onclick="move('right')"
+    onmousedown="startMove('right')" onmouseup="stopMove()" onmouseout="stopMove()"
+    >Click Right</button>
+    
+  </body>
+  
+  <script>
+    let box = document.getElementById("box");
+
+function displayBox() {
+  let width = document.getElementById("width").value;
+  let height = document.getElementById("height").value;
+  let margin = document.getElementById("margin").value;
+  let colorValue = document.getElementById("colorValue").value;
+
+  box.style.display = "block";
+  box.style.backgroundColor = colorValue;
+  box.style.width = width + "px";
+  box.style.height = height + "px";
+  box.style.margin = margin + "px";
+}
+
+function move(direction) {
+  let currentMargin = parseInt(box.style.marginLeft) || 0;
+  let distance = direction === 'left' ? -20 : 20;
+  let newMargin = currentMargin + distance;
+
+  if (newMargin >= 0 && newMargin <= window.innerWidth - box.offsetWidth) {
+    box.style.marginLeft = newMargin + "px";
+  }
+}
+
+function startMove(direction) {
+    moveDirection = direction;
+    intervalId = setInterval(move, 100);
+  }
+
+  function stopMove() {
+    clearInterval(intervalId);
+    moveDirection = '';
+  }
+  </script>
+</html>
