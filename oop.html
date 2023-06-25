@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+
+    <script>
+
+
+        class User{
+            constructor(email, name, password){
+                this.email = email,
+                this.name = name
+                this.password = password
+                this.score = 0
+                this.gender = male
+            }
+        };
+
+        login(){
+            console.log(this.name,'just logged in')
+        }
+        ;
+
+        logOut(){
+            console.log(this.name,'just logged out')
+        }
+
+        increaseScore(){
+            this.score ++
+            console.log(this.name,'score')
+
+        };
+
+        class Admin extends User {
+            deleteUser(){
+                users = users.filter((u)=>{
+                    return u.email != user.email
+                })
+            }
+        };
+
+        let user = [userOne,userTwo,Admin]
+
+        let userOne = new User('adewale@gmail.com', 'adewale', '578903')
+        let userTwo = new User('ade@gmail.com', 'Mr wale', '456790')
+        let Admin = new Admin('sam@gmail.com', 'sam', '456790','male')
+
+
+    </script>
+
+
+
+</body>
+</html>

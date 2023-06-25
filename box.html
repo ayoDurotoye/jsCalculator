@@ -22,16 +22,87 @@
     <button onclick="move('right')"
     onmousedown="startMove('right')" onmouseup="stopMove()" onmouseout="stopMove()"
     >Click Right</button>
+
+    <h1 id="updateNam"></h1>
+
+    <input type="text" id="val1">
+    <input type="text" id="val2">
+    <button onclick="add()">add</button>
+
+    <table class="table">
+        <tr>
+            <td id="data1"></td>
+            <td id="data2"></td>
+        </tr>
+    </table>
+    <tbody id="showarea"></tbody>
+
     
   </body>
   
   <script>
+function add() {
+    let value1 = document.getElementById("val1").value;
+    let value2 = document.getElementById("val2").value;
+    let data = [value1, value2];
+    
+    let storedData = localStorage.getItem("tableData");
+    let parsedData = storedData ? JSON.parse(storedData) : [];
+
+    parsedData.push(data);
+    
+    localStorage.setItem("tableData", JSON.stringify(parsedData));
+    let tableData1 = document.getElementById("data1");
+  let tableData2 = document.getElementById("data2");
+
+  // Clear previous content
+  tableData1.innerHTML = "";
+  tableData2.innerHTML = "";
+
+  parsedData.forEach(item => {
+    let row1 = document.createElement("tr");
+    let cell1 = document.createElement("td");
+    cell1.textContent = item[0];
+    row1.appendChild(cell1);
+    tableData1.appendChild(row1);
+
+    let row2 = document.createElement("tr");
+    let cell2 = document.createElement("td");
+    cell2.textContent = item[1];
+    row2.appendChild(cell2);
+    tableData2.appendChild(row2);
+
+
+
+    let paragraphExists = document.getElementById("message");
+        if (!paragraphExists) {
+          var message = document.createElement("p");
+          message.setAttribute("id", "message");
+        //   message.textContent = "Table data retrieved from localStorage.";
+          document.body.appendChild(message);
+        }
+  });
+  
+}
+
+window.onload = function(){add()};
+
+
+
+
+
+
+
+
+
+
+
     let box = document.getElementById("box");
 
 function displayBox() {
   let width = document.getElementById("width").value;
   let height = document.getElementById("height").value;
-  let margin = document.getElementById("margin").value;
+  let margin = document.getElementById("margin`").value;
   let colorValue = document.getElementById("colorValue").value;
 
   box.style.display = "block";
@@ -60,5 +131,26 @@ function startMove(direction) {
     clearInterval(intervalId);
     moveDirection = '';
   }
+
+//   let h1Element = document.querySelector("h1")
+
+
+  let name = ["mr tezzy", "ibro", "titi", "ibdLoaded", "bolu", "ayomikun"];
+let currentIndex = 0;
+
+function updateName() {
+  let h1Element = document.querySelector("h1");
+  h1Element.textContent = name[currentIndex];
+
+  currentIndex++;
+  if (currentIndex >= name.length) {
+    currentIndex = clearInterval;
+ 
+}
+
+setInterval(updateName, 1000);
+
+
+}
   </script>
 </html>

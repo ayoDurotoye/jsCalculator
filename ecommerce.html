@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ecommerce Product List</title>
+  <script>
+    // Array of eCommerce products
+    var products = [
+      { name: "Product 1", price: 10, image: "product1.jpg" },
+      { name: "Product 2", price: 20, image: "product2.jpg" },
+      { name: "Product 3", price: 30, image: "product3.jpg" },
+      { name: "Product 4", price: 40, image: "product4.jpg" },
+      { name: "Product 5", price: 50, image: "product5.jpg" }
+    ];
+
+    // Cart to store selected products
+    var cart = [];
+
+    // Function to add a product to the cart
+    function addToCart(index) {
+      var product = products[index];
+      cart.push(product);
+      console.log("Added", product.name, "to the cart!");
+      displayCart();
+    }
+
+    // Function to display the products in the cart
+    function displayCart() {
+      var cartList = document.getElementById("cart");
+
+      // Clear the previous contents
+      cartList.innerHTML = "";
+
+      for (var i = 0; i < cart.length; i++) {
+        var cartItem = document.createElement("li");
+        cartItem.textContent = cart[i].name;
+        cartList.appendChild(cartItem);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Ecommerce Product List</h1>
+  <ul id="product-list">
+    <!-- Loop through the products array -->
+    <script>
+      for (var i = 0; i < products.length; i++) {
+        document.write('<li>');
+        document.write('<img src="' + products[i].image + '" alt="' + products[i].name + '">');
+        document.write('<strong>' + products[i].name + '</strong> - $' + products[i].price);
+        document.write('<button onclick="addToCart(' + i + ')">Add to Cart</button>');
+        document.write('</li>');
+      }
+    </script>
+  </ul>
+  <h2>Cart</h2>
+  <ul id="cart"></ul>
+
+  <script>
+    // Call the displayCart function to initially display the cart
+    displayCart();
+  </script>
+</body>
+</html>

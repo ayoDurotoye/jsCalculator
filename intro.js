@@ -251,30 +251,30 @@ let artist = [];
       show();
     }
 
-    // function show() {
-    //   let showArea = document.getElementById("showArea");
-    //   showArea.innerHTML = "";
+    function show() {
+      let showArea = document.getElementById("showArea");
+      showArea.innerHTML = "";
 
-    //   for (let i = 0; i < artist.length; i++) {
-    //    let name = artist[i].name;
-    //    let number = artist[i].number;
+      for (let i = 0; i < artist.length; i++) {
+       let name = artist[i].name;
+       let number = artist[i].number;
 
        
 
 
-    //     showArea.innerHTML += `
+        showArea.innerHTML += `
           
-    //       <tbody border="1" width="80%" text-align="center">
-    //         <td>${i + 1}</td>
-    //         <td>${name}</td>
-    //         <td>${number}</td>
-    //         <td><button onclick="deleteArtist(${i})">Delete</button></td>
-    //       </tbody>
-    //     `;
-    //   }
+          <tbody border="1" width="80%" text-align="center">
+            <td>${i + 1}</td>
+            <td>${name}</td>
+            <td>${number}</td>
+            <td><button onclick="deleteArtist(${i})">Delete</button></td>
+          </tbody>
+        `;
+      }
 
     
-    // }
+    }
 
 
     function show() {
@@ -356,15 +356,15 @@ let artist = [];
 
     //  case study of Array.filter
 
-//     let names = ['teslim', 'titi', 'bolu', 'ayo', 'teslim', 'titi', 'bolu', 'ayom','come','photoshop', 'teslim', 'titi', 'bolu', 'ayomide'];
-// let searchInput = document.querySelector('#inpme');
-// let resultsDiv = document.querySelector('#hh3');
+    let names = ['teslim', 'titi', 'bolu', 'ayo', 'teslim', 'titi', 'bolu', 'ayom','come','photoshop', 'teslim', 'titi', 'bolu', 'ayomide'];
+let searchInput = document.querySelector('#inpme');
+let resultsDiv = document.querySelector('#hh3');
 
-// searchInput.addEventListener('input', () => {
-//   let searchTerm = searchInput.value.toLowerCase();
-//   let filteredNames = names.filter(name => name.toLowerCase().startsWith(searchTerm));
-//   displayResults(filteredNames);
-// });
+searchInput.addEventListener('input', () => {
+  let searchTerm = searchInput.value.toLowerCase();
+  let filteredNames = names.filter(name => name.toLowerCase().startsWith(searchTerm));
+  displayResults(filteredNames);
+});
 
 // function displayResults(filteredNames) {
 //   resultsDiv.innerHTML = '';
